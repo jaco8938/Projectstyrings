@@ -42,12 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Data Access Layer\Database Access.cs" />
+    <Compile Include="Data Access Layer\DataBase Controller.cs" />
+    <Compile Include="DomainBusiness\Controller.cs" />
+    <Compile Include="UI\Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserRepo.cs" />
+    <Compile Include="DomainBusiness\Profile.cs" />
+    <Compile Include="DomainBusiness\ProfileRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
