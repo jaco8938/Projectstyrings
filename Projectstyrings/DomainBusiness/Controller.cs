@@ -12,6 +12,11 @@ namespace Projectstyrings
     //i controlleren skal alt
     class Controller
     {
+        private ProjectRepository projectRepository = new ProjectRepository();
+        public List<Project> ShowProjects()
+        {
+            return projectRepository.GetProjects();
+        }
 
             
 
