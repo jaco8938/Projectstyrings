@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Projectstyrings
 {
-    public class User
+    public class Profile
     {
         public string name { get; set; }
         public string password { get; set; }
         public string email { get; set; }
         public string tlf { get; set; }
 
-        public User(string playerName, string playerAddress = null, string playerEmail = null, string playerTelephone = null)
+        public Profile(string profileName, string profileAddress = null, string profileEmail = null, string profileTelephone = null)
         {
-            name = UserName;
-            password = UserPassword;
-            email = playerEmail;
-            tlf = playerTelephone;
+            name = profileName;
+            //password = userPassword;
+            email = profileEmail;
+            tlf = profileTelephone;
         }
     }
 }
