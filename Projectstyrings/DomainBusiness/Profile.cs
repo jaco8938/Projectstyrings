@@ -8,17 +8,26 @@ namespace Projectstyrings
 {
     public class Profile
     {
-        public string name { get; set; }
-        public string password { get; set; }
-        public string email { get; set; }
-        public string tlf { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        //public string password { get; set; }
+        public string Email { get; set; }
+        public string SchoolOrCompany { get; set; }
+        public string Tlf { get; set; }
+        List<Project> projects = new List<Project>();
 
-        public Profile(string profileName, string profileAddress = null, string profileEmail = null, string profileTelephone = null)
+        public Profile(string profileName, string profileEmail = null, string profileSchoolOrCompany = null, string profileTelephone = null)
         {
-            name = profileName;
+            Name = profileName;
             //password = userPassword;
-            email = profileEmail;
-            tlf = profileTelephone;
+            Email = profileEmail;
+            SchoolOrCompany = profileSchoolOrCompany;
+            Tlf = profileTelephone;
+        }
+
+        public void AddProject(Project newProject)
+        {
+            projects.Add(newProject);
         }
     }
 }
