@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainBusiness\Booking.cs" />
+    <Compile Include="DomainBusiness\Repositories\BookingRepository.cs" />
     <Compile Include="Data Access Layer\Database Access.cs" />
     <Compile Include="Data Access Layer\DataBase Controller.cs" />
     <Compile Include="DomainBusiness\Controller.cs" />
