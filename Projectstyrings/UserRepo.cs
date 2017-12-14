@@ -8,14 +8,14 @@ namespace Projectstyrings
 {
     class UserRepo
     {
-        private List<User> players = new List<User>();
+        private List<User> users = new List<User>();
 
-        public void RegisterPlayer(User user)
+        public void RegisterUser(User user)
         {
-            players.Add(user);
+            users.Add(user);
         }
 
-        public void RegisterPlayer(string name, string password = null, string email = null, string telephone = null)
+        public void RegisterUser(string name, string password = null, string email = null, string telephone = null)
         {
             User newUser = new User(name, password, email, telephone);
             RegisterUser(newUser);
@@ -27,7 +27,7 @@ namespace Projectstyrings
             int idx = 0;
             while ((foundUser == null) && (idx < users.Count))
             {
-                if (players[idx].name.Equals(name))
+                if (users[idx].name.Equals(name))
                 {
                     foundUser = users[idx];
                 }

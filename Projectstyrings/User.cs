@@ -12,13 +12,15 @@ namespace Projectstyrings
         public string password { get; set; }
         public string email { get; set; }
         public string tlf { get; set; }
+        public string companyOrSchool { get; set; }
 
-        public User(string playerName, string playerAddress = null, string playerEmail = null, string playerTelephone = null)
+        public User(string UserName, string UserPassword = null, string UserEmail = null, string UserTlf = null, string companySchool = null)
         {
             name = UserName;
             password = UserPassword;
-            email = playerEmail;
-            tlf = playerTelephone;
+            email = UserEmail;
+            tlf = UserTlf;
+            companyOrSchool = companySchool;
         }
     }
 }

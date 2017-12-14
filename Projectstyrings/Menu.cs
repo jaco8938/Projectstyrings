@@ -8,7 +8,7 @@ namespace Projectstyrings
 {
     public class Menu
     {
-        private Controller x = null;
+        private Controller x = null; 
 
         public Menu()
         {
@@ -21,11 +21,11 @@ namespace Projectstyrings
             bool running = true;
             do
             {
-                Console.WriteLine("Dragons Lair");
+                Console.WriteLine("FABlab profile");
                 Console.WriteLine();
-                Console.WriteLine("1. Præsenter ligastilling");
-                Console.WriteLine("2. Planlæg runde i liga");
-                Console.WriteLine("3. Afvikl kamp");
+                Console.WriteLine("Show profiles");
+                Console.WriteLine("Show projects");
+                Console.WriteLine("Book equipment");
                 Console.WriteLine();
                 Console.WriteLine("0. Exit");
                 Console.WriteLine();
