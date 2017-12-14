@@ -10,15 +10,12 @@ namespace Projectstyrings
     {
         private List<Booking> bookingList = new List<Booking>();
 
-        public void CreateNewBooking(DateTime dateTime, int equipmentId)
+        public void CreateNewBooking(DateTime dateTime, int equipmentId, string equipment)
         {
-            Booking booking = new Booking(dateTime, equipmentId);
+            Booking booking = new Booking(dateTime, equipmentId, equipment);
             bookingList.Add(booking);
         }
 
-        public List<Booking> GetBookings()
-        {
-            return bookingList;
-        }
+       
     }
 }

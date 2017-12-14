@@ -49,6 +49,8 @@
     <Compile Include="DomainBusiness\Controller.cs" />
     <Compile Include="DomainBusiness\Project.cs" />
     <Compile Include="DomainBusiness\Repositories\ProjectRepository.cs" />
+    <Compile Include="DomainBusiness\Repositories\EquipmentRepository.cs" />
+    <Compile Include="DomainBusiness\Equipment.cs" />
     <Compile Include="UI\Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

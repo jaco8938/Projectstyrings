@@ -18,10 +18,10 @@ namespace Projectstyrings
             return projectRepository.GetProjects();
         }
 
-        private BookingRepository bookingRepository = new BookingRepository();
-        public List<Booking> ShowBookings()
+        private EquipmentRepository equipmentRepository = new EquipmentRepository();
+        public List<Equipment> ShowEquipmentToBook()
         {
-            return bookingRepository.GetBookings();
+            return equipmentRepository.GetEquipment();
         }
 
             
