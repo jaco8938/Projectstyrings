@@ -18,6 +18,12 @@ namespace Projectstyrings
             return projectRepository.GetProjects();
         }
 
+        private BookingRepository bookingRepository = new BookingRepository();
+        public List<Booking> ShowBookings()
+        {
+            return bookingRepository.GetBookings();
+        }
+
             
 
             //void skal fjernes
