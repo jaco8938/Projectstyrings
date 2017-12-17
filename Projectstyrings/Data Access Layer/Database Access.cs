@@ -12,9 +12,9 @@ namespace Projectstyrings.Data_Access_Layer
     class Database_Access
     {
         SqlConnection con = new SqlConnection(DBController.connectionstring);
-        List<Profile> GetProfiles()
+        public List<Profile> GetProfiles()
         {
-            List<Profile> resultat = new List<Profile>();
+            List<Profile> profileList = new List<Profile>();
             
             {
                 try
@@ -37,8 +37,8 @@ namespace Projectstyrings.Data_Access_Layer
                             string ProfileCompanyOrSchool = readerForCommand1["ProfileCompanyOrSchool"].ToString(); ;
                             //User constructorens navn skal ændres til profile. Det skal også rettes her forneden.
                             // Det der er i User skal være konsistens med det der er i constructoren. Både med navn og rækkefølge
-                            Profile x = new Profile(ProfileName, ProfilePhone, ProfileEmail, ProfileCompanyOrSchool);
-                            resultat.Add(x);
+                            Profile x = new Profile(ProfileId, ProfileName, ProfilePhone, ProfileEmail, ProfileCompanyOrSchool);
+                            profileList.Add(x);
                         }
                     }
                 }
@@ -47,11 +47,13 @@ namespace Projectstyrings.Data_Access_Layer
                     Console.WriteLine("UPS" + error.Message);
                 }
             }
-            return resultat;
+            return profileList;
         }
 
         public List<Project> GetProjects()
         {
+            List<Project> projectList = new List<Project>();
+
             try
             {
                 con.Open();
@@ -76,6 +78,8 @@ namespace Projectstyrings.Data_Access_Layer
             {
                 Console.WriteLine("UPS" + error.Message);
             }
+            return projectList;
+        }
 
             //Mikkel CreateNewBooking
             public void Run()
@@ -97,7 +101,6 @@ namespace Projectstyrings.Data_Access_Layer
                         Console.WriteLine("Ups " + e.Message);
                     }
             }
-        }
         //"server" er navnet på vores SQL server, og her connecter den til en local default instance af den SQL server
         Server srv;
         srv = new Server();
@@ -133,6 +136,6 @@ namespace Projectstyrings.Data_Access_Layer
         sp.Create();
 
 
-        }
+    }
 }
-}
+
