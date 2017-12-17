@@ -12,33 +12,34 @@ namespace Projectstyrings
     //i controlleren skal alt
     class Controller
     {
+
+        private ProfileRepository profileRepository = new ProfileRepository();
         private ProjectRepository projectRepository = new ProjectRepository();
+        private EquipmentRepository equipmentRepository = new EquipmentRepository();
+
+        public void CreateNewProfile(string id, string profileName, string profileTelephone = null, string profileEmail = null, string profileSchoolOrCompany = null)
+        {
+            profileRepository.CreateNewProfile(id, profileName, profileTelephone, profileEmail, profileSchoolOrCompany);
+        }
+        public void CreateNewProject(string id, string projectName, string projectDescription)
+        {
+            projectRepository.CreateNewProject(id, projectName, projectDescription);
+        }
+
+        public List <Profile> ShowProfiles()
+        {
+            return profileRepository.GetProfiles();
+        }
+
         public List<Project> ShowProjects()
         {
             return projectRepository.GetProjects();
         }
 
-        private EquipmentRepository equipmentRepository = new EquipmentRepository();
         public List<Equipment> ShowEquipmentToBook()
         {
             return equipmentRepository.GetEquipment();
         }
-
-            
-
-            //void skal fjernes
-            
-            //static void Main(string[] args)
-            //{
-            //    Program myProgram = new Program();
-            //    myProgram.Run();
-            //}
-
-            //private void Run()
-            //{
-            //    Menu menu = new Menu();
-            //    menu.RunMenu();
-            //}
-        }
     }
+}
 

@@ -16,8 +16,9 @@ namespace Projectstyrings
         public string Tlf { get; set; }
         List<Project> projects = new List<Project>();
 
-        public Profile(string profileName, string profileEmail = null, string profileSchoolOrCompany = null, string profileTelephone = null)
+        public Profile(int id, string profileName, string profileTelephone = null, string profileEmail = null, string profileSchoolOrCompany = null)
         {
+            Id = id;
             Name = profileName;
             //password = userPassword;
             Email = profileEmail;
