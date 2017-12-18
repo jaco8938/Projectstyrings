@@ -17,11 +17,11 @@ namespace Projectstyrings
         private ProjectRepository projectRepository = new ProjectRepository();
         private EquipmentRepository equipmentRepository = new EquipmentRepository();
 
-        public void CreateNewProfile(string id, string profileName, string profileTelephone = null, string profileEmail = null, string profileSchoolOrCompany = null)
+        public void CreateNewProfile(int id, string profileName, string profileTelephone = null, string profileEmail = null, string profileSchoolOrCompany = null)
         {
             profileRepository.CreateNewProfile(id, profileName, profileTelephone, profileEmail, profileSchoolOrCompany);
         }
-        public void CreateNewProject(string id, string projectName, string projectDescription)
+        public void CreateNewProject(int id, string projectName, string projectDescription)
         {
             projectRepository.CreateNewProject(id, projectName, projectDescription);
         }

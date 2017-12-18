@@ -21,7 +21,7 @@ namespace Projectstyrings
             return profiles;
         }
 
-        public void CreateNewProfile(string id, string profileName, string profileTelephone = null, string profileEmail = null, string profileSchoolOrCompany = null)
+        public void CreateNewProfile(int id, string profileName, string profileTelephone = null, string profileEmail = null, string profileSchoolOrCompany = null)
         {
             Profile newProfile = new Profile(id, profileName, profileTelephone, profileEmail, profileSchoolOrCompany);
 

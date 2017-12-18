@@ -19,9 +19,9 @@ namespace Projectstyrings
         {
             return projects;
         }
-        public void CreateNewProject(string id, string projectName, string projectDescription)
+        public void CreateNewProject(int id, string projectName, string projectDescription)
         {
-            Project newProject = new Project();
+            Project newProject = new Project(id, projectName, projectDescription);
 
             newProject.Id = id;
             newProject.Name = projectName;
