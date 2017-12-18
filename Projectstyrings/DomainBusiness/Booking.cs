@@ -12,10 +12,11 @@ namespace Projectstyrings
         public string Equipment { get; set; }
         public int EquipmentId { get; set; }
 
-        public Booking(DateTime dateTime, int equipmentId)
+        public Booking(DateTime dateTime, int equipmentId, string equipment)
         {
             BookingTime = dateTime;
             EquipmentId = equipmentId;
+            Equipment = equipment;
         }
     }
 }
