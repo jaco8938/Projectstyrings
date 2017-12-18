@@ -15,7 +15,7 @@ namespace Projectstyrings.Data_Access_Layer
         List<Profile> GetProfiles()
         {
             List<Profile> resultat = new List<Profile>();
-            
+
             {
                 try
                 {
@@ -49,90 +49,92 @@ namespace Projectstyrings.Data_Access_Layer
             }
             return resultat;
         }
-
-        public List<Project> GetProjects()
-        {
-            try
-            {
-                con.Open();
-
-                SqlCommand command2 = new SqlCommand("GetProjects", con);
-                command2.CommandType = CommandType.StoredProcedure;
-
-                SqlDataReader readerForCommand2 = command2.ExecuteReader();
-
-                if (readerForCommand2.HasRows)
-                {
-                    while (readerForCommand2.Read())
-                    {
-                        string ProjectId = readerForCommand2["ProjectId"].ToString(); ;
-                        string ProjectName = readerForCommand2["ProjectName"].ToString(); ;
-                        string ProjectDescription = readerForCommand2["ProjectDescription"].ToString(); ;
-                        Console.WriteLine(ProjectId + " " + ProjectName + " " + ProjectDescription);
-                    }
-                }
-            }
-            catch (SqlException error)
-            {
-                Console.WriteLine("UPS" + error.Message);
-            }
-
-            //Mikkel CreateNewBooking
-            public void Run()
-            {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                    try
-                    {
-                        con.Open();
-
-                        SqlCommand cmd1 = new SqlCommand("InsertBooking", con);
-                        cmd1.CommanType = CommandType.StoreProcedure;
-                        cmd1.Parameters.Add(new SqlParameter("@ProfileId"));
-                        cmd1.Parameters.Add(new SqlParameter("@ProfileName"));
-
-                        cmd1.ExecuteNonQuery();
-                    }
-                    catch (SqlException e)
-                    {
-                        Console.WriteLine("Ups " + e.Message);
-                    }
-            }
-        }
-        //"server" er navnet på vores SQL server, og her connecter den til en local default instance af den SQL server
-        Server srv;
-        srv = new Server();
-
-        //"Database" er navnet på vores database
-        Database db;
-        db = srv.Databases["navnet på vores database"];
-        
-        //her difinere jeg den stored proc
-        StoredProcedure sp;
-        sp = new StoreProcedure(db, "CreateNewBooking");
-
-        //sætter textmode property til false, og sætter andre object properties
-        sp.TextMode = false;
-        sp.AnsiNullsStatus = false;
-        sp.QuotedIdentifierStatus = false;
-        
-        //tilføjer 2 parametre
-        StoreProcedureParamater param;
-        param = new StoredProcedureParameter(sp, "@profileId", DataType.Int);
-        sp.Parameters.Add(param);
-        StoredProcedureParameter param2;
-        param2 = new StoredProcedureParameter(sp, "@profileName", DataType.NVarChar(50));
-        param2.IsOutputParameter = true;
-        sp.Parameters.Add(param2);
-        
-        //sætter TextBody property til at definere vores storedproc
-        string stmt;
-        stmt = " SELECT @profileName = (SELECT ProfileName FROM Profiles.ProfileName WHERE Profiles.ProfileName.ProfileId = @profileID )";
-        sp.TextBody = stmt;
-        
-        //Create the stored proc i instansen ar SQL serveren
-        sp.Create();
-
-
-        }
+    }
 }
-}
+        //public List<Project> GetProjects()
+        //{
+        //    try
+        //    {
+        //        con.Open();
+
+        //        SqlCommand command2 = new SqlCommand("GetProjects", con);
+        //        command2.CommandType = CommandType.StoredProcedure;
+
+        //        SqlDataReader readerForCommand2 = command2.ExecuteReader();
+
+        //        if (readerForCommand2.HasRows)
+        //        {
+        //            while (readerForCommand2.Read())
+        //            {
+        //                string ProjectId = readerForCommand2["ProjectId"].ToString(); ;
+        //                string ProjectName = readerForCommand2["ProjectName"].ToString(); ;
+        //                string ProjectDescription = readerForCommand2["ProjectDescription"].ToString(); ;
+        //                Console.WriteLine(ProjectId + " " + ProjectName + " " + ProjectDescription);
+        //            }
+        //        }
+        //    }
+        //    catch (SqlException error)
+        //    {
+        //        Console.WriteLine("UPS" + error.Message);
+        //    }
+
+    //        //Mikkel CreateNewBooking
+    //        public void Run()
+    //        {
+    //            using (SqlConnection con = new SqlConnection(connectionString))
+    //                try
+    //                {
+    //                    con.Open();
+
+    //                    SqlCommand cmd1 = new SqlCommand("InsertBooking", con);
+    //                    cmd1.CommanType = CommandType.StoreProcedure;
+    //                    cmd1.Parameters.Add(new SqlParameter("@ProfileId"));
+    //                    cmd1.Parameters.Add(new SqlParameter("@ProfileName"));
+
+    //                    cmd1.ExecuteNonQuery();
+    //                }
+    //                catch (SqlException e)
+    //                {
+    //                    Console.WriteLine("Ups " + e.Message);
+    //                }
+    //        }
+    //    }
+    //}
+        ////"server" er navnet på vores SQL server, og her connecter den til en local default instance af den SQL server
+        //Server srv;
+        //srv = new Server();
+
+        ////"Database" er navnet på vores database
+        //Database db;
+        //db = srv.Databases["navnet på vores database"];
+
+        ////her definere jeg den stored proc
+        //StoredProcedure sp;
+        //sp = new StoreProcedure(db, "CreateNewBooking");
+
+        ////sætter textmode property til false, og sætter andre object properties
+        //sp.TextMode = false;
+        //sp.AnsiNullsStatus = false;
+        //sp.QuotedIdentifierStatus = false;
+
+        ////tilføjer 2 parametre
+        //StoreProcedureParamater param;
+        //param = new StoredProcedureParameter(sp, "@profileId", DataType.Int);
+        //sp.Parameters.Add(param);
+        //StoredProcedureParameter param2;
+        //param2 = new StoredProcedureParameter(sp, "@profileName", DataType.NVarChar(50));
+        //param2.IsOutputParameter = true;
+        //sp.Parameters.Add(param2);
+
+        ////sætter TextBody property til at definere vores storedproc
+        //string stmt;
+        //stmt = " SELECT @profileName = (SELECT ProfileName FROM Profiles.ProfileName WHERE Profiles.ProfileName.ProfileId = @profileID )";
+        //sp.TextBody = stmt;
+
+        ////Create the stored proc i instansen ar SQL serveren
+        //sp.Create();
+
+
+        //}
+//    }
+//}
