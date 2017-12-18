@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FabLabUI"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="525"
-      Title="Booking">
+      Title="Bookings">
 
     <Grid x:Name="Book">
         <Button x:Name="Return" Content="Return" HorizontalAlignment="Left" Margin="136,131,0,0" VerticalAlignment="Top" Width="75" Click="Return_Click"/>
