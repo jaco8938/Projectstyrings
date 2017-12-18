@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using Projectstyrings;
 
-namespace Projectstyrings
+namespace ConnectToDB2017_C06
 {
-    class Program
-    {
+    class Program { 
         static void Main(string[] args)
         {
-            Program myProgram = new Program();
-            myProgram.Run();
+            Program prog = new Program();
+            prog.Run();
         }
 
         private void Run()
