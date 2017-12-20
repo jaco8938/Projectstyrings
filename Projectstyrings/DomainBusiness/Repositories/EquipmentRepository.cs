@@ -8,9 +8,12 @@ namespace Projectstyrings
 {
     class EquipmentRepository
     {
+        private List<Equipment> equipmentList = new List<Equipment>();
+
         private List<Equipment> availableEquipmentList = new List<Equipment>();
 
-        public List<Equipment> GetEquipment()
+
+        public List<Equipment> GetAvailableEquipment()
         {
             return availableEquipmentList;
         }
