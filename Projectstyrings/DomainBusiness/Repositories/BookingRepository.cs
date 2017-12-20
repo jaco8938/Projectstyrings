@@ -15,7 +15,5 @@ namespace Projectstyrings
             Booking booking = new Booking(dateTime, equipmentId, equipment);
             bookingList.Add(booking);
         }
-
-       
     }
 }
