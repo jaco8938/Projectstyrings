@@ -11,6 +11,8 @@ namespace Projectstyrings.Data_Access_Layer
 {
     class Database_Access
     {
+        private static string connectionstring = "Server=ealdb1.eal.local; Database= DB2017_C06; User Id= USER_C06; Password= SesamLukOp_06";
+
         SqlConnection con = new SqlConnection(DBController.connectionstring);
         public List<Profile> GetProfiles()
         {
